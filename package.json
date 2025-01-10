@@ -25,15 +25,16 @@
     "nodemon": "^3.1.9",
     "prettier": "^3.4.2",
     "ts-node": "^10.9.2",
+    "tsx": "^4.7.1",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.19.1",
-    "tsx": "^4.7.1"
+    "typescript-eslint": "^8.19.1"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
     "ethers": "^6.13.5",
     "lowdb": "^7.0.1",
-    "pino": "^9.6.0"
+    "pino": "^9.6.0",
+    "pino-pretty": "^7.0.0"
   },
   "type": "module"
 }
