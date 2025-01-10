@@ -6,7 +6,10 @@ import { ABI as PingPongABI } from '../contract/PingPong.js';
 import { getConfig } from '../utils/config.js';
 
 export class PingPongContract {
-  constructor(private provider: JsonRpcProvider) {}
+  private provider: JsonRpcProvider;
+  constructor(private _provider: JsonRpcProvider) {
+    this.provider = _provider;
+  }
 
   async callPong(txnHash: string, onStart: () => void, onSuccess: () => void, onError: (error: Error) => void) {
     try {

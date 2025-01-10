@@ -1,5 +1,3 @@
-import { Interface } from '@ethersproject/abi';
-
 export const ABI = [
   {
     inputs: [],
@@ -84,6 +82,4 @@ export const ABI = [
     stateMutability: 'nonpayable',
     type: 'function',
   },
-];
-
-export const PingPongInterface = new Interface(ABI);
+] as const;
