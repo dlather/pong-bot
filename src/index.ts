@@ -1,4 +1,6 @@
 import { JSONFilePreset } from 'lowdb/node';
+import { JsonRpcProvider } from 'ethers';
+import { getConfig } from './utils/config.js';
 
 type DbSchema = {
   posts: string[];
@@ -11,6 +13,12 @@ async function main() {
   console.log(db.data);
   db.data.posts.push('hello world');
   await db.write();
+
+  //   const provider = new ethers.JsonRpcProvider('https://mainnet.base.org');
+  //   const jsonRpcProvider = new JsonRpcProvider(`${ALCHEMY_NODE_ENDPOINT}${process.env.ALCHEMY_API_KEY}`);
+  const jsonRpcProvider = new JsonRpcProvider(getConfig().providers.alchemy);
+  const blockNumber = await jsonRpcProvider.getBlockNumber();
+  console.log(blockNumber);
 }
 
 main();
