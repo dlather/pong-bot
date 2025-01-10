@@ -16,7 +16,7 @@ async function main() {
   await db.write();
   //   const provider = new ethers.JsonRpcProvider('https://mainnet.base.org');
   //   const jsonRpcProvider = new JsonRpcProvider(`${ALCHEMY_NODE_ENDPOINT}${process.env.ALCHEMY_API_KEY}`);
-  const jsonRpcProvider = new JsonRpcProvider(getConfig().providers.alchemy);
+  const jsonRpcProvider = new JsonRpcProvider(getConfig().providers[0].url);
   const blockNumber = await jsonRpcProvider.getBlockNumber();
   logger.info(blockNumber);
 }

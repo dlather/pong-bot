@@ -27,5 +27,9 @@ export const getConfig = () => {
     });
   }
 
-  return { providers };
+  return {
+    providers,
+    pingPongAddress: process.env.PING_PONG_ADDRESS || '',
+    walletPrivateKey: process.env.WALLET_PRIVATE_KEY || '',
+  };
 };
